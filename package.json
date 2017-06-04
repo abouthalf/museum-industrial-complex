@@ -1,0 +1,20 @@
+{
+  "name": "museum-industrial-complex",
+  "version": "1.0.0",
+  "description": "A silly satire site",
+  "main": "index.js",
+  "repository": "https://github.com/abouthalf/museum-industrial-complex.git",
+  "author": "Michael Barrett <mb@abouthalf.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/gulp": "^4.0.3",
+    "@types/gulp-less": "^0.0.30",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-less": "^3.3.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-webserver": "^0.9.1",
+    "less-plugin-autoprefix": "^1.5.1",
+    "less-plugin-clean-css": "^1.5.1"
+  }
+}
