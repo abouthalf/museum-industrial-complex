@@ -1,0 +1,89 @@
+.muli {
+    font-family: 'Muli', sans-serif;
+}
+
+.slabo {
+    font-family: 'Slabo 27px', serif;
+}
+
+.margin-bottom() {
+    margin-top: 0;
+	margin-bottom: 24px;
+	margin-bottom:1.5rem;
+}
+
+/* universal margin-bottom */
+h1,h2,h3,h4,h5,h6,hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr,form
+{
+	.margin-bottom();
+}
+
+ul ul {margin-bottom: 0;}
+
+*:last-child {
+    margin-bottom: 0;
+}
+
+/* font -sizes */
+html,
+body
+{
+    font-size: 16px;
+    font-size: 1em;
+}
+
+.billboard {
+	font-size: 8rem;
+	line-height: 1;
+}
+
+.poster {
+	font-size: 5rem;
+	line-height: 1.2;
+}
+
+.header {
+	font-size: 3rem;
+	line-height: 1.33333;
+}
+
+.sub-header {
+	font-size: 2rem;
+	line-height: 1.5;
+}
+
+.big {
+	font-size: 1.5rem;
+	line-height: 1.33333333;
+}
+
+.body {
+	font-size: 16px; // fallback for IE
+	font-size: 1em;
+	line-height: 1.5;
+}
+
+.small {
+	font-size: .75rem;
+	line-height: 1.33333333;
+}
+
+.footnote {
+	font-size: .8em;
+	padding: .25rem;
+	vertical-align: super;
+	color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    .muli;
+}
+
+h1 {.header;}
+h2 {.sub-header;}
+h3 {.big;}
+h4, h5, h6 {.body;}
