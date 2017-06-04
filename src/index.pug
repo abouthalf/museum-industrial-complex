@@ -7,8 +7,25 @@ html(lang='en')
 		link(href='https://fonts.googleapis.com/css?family=Muli|Slabo+27px', rel='stylesheet')
 		link(href='/css/main.css',rel='stylesheet')
 	body
-		main
+		main#main
 			header.pagehead
 				h1 Museum Industrial Complex
 				h2 Protecting your cultural investment
-			article
+			nav.mainnav
+				ul
+					li: a(href="#about") About
+					li: a(href="#services") Services
+					li: a(href="#contact") Contact
+			img.deart(src="img/object-de-art.svg", alt="art")
+			section#about
+				h1 About
+				include:markdown-it about.md
+				a.to-top(href="#main") ▲ top
+			section#services
+				h1 Services
+				include:markdown-it services.md
+				a.to-top(href="#main") ▲ top
+			section#contact
+				h1 Contact
+				include:markdown-it contact.md
+				a.to-top(href="#main") ▲ top

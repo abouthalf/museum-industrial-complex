@@ -6,24 +6,147 @@
 @lightsky: #D9F5FF;
 @orange: #f60;
 
+
+body {
+    color: #666;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #ccc;
+}
+
+a {
+    color: @orange;
+}
+
 html, body {
     background: @lightsky;
 }
 
+// page components
+
 main {
+    display: flex;
+    flex-direction: column;    
     max-width: 1024px;
     margin: 0 auto;
-    background: #fff;
-}
+    overflow-x: hidden;
 
-.pagehead {
-    min-height: 768px;
-    background-color: @darksky;
+    background: #fff;
     background-image: url('/img/header.svg');
     background-position: center top;
     background-repeat: no-repeat;
+    // background-size: contain;
+
+    .mainnav {order: 0;}
+    .pagehead {order: 1;}
+    .deart {order: 2;}
+    section {order: 99;}
 }
 
-.splash {
-    width: 100%;
+
+.pagehead {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 1rem;
+    margin-top: 200px;
+
+    h1, h2 {width: 50%;}
+    h2 {text-align: right;}
 }
+
+.deart {
+    width: 50%;
+    margin: -25% auto 0 auto;
+}
+
+.mainnav {
+    padding: 2rem;
+    ul {padding: 0;}
+    li {list-style: none;}
+
+    a {
+        color: white;
+        .big;
+        .muli;
+        text-decoration: none;
+        text-transform: lowercase;
+    }
+}
+
+section {
+    padding: 1rem;
+
+    h1:first-of-type {.billboard;}
+}
+
+.to-top {
+    display: block;
+    margin: 0 auto;
+
+    text-decoration: none; 
+    text-align: right;
+    .muli;
+}
+
+@media screen and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 414px) {
+    .pagehead {
+        h1 {.sub-header;}
+        h2 {.big;}
+    }
+
+    section h1:first-of-type {.poster;}
+}
+
+@media screen and (max-width: 320px) {
+    .pagehead {
+        h1 {.big;}
+        h2 {.big;}
+    }
+
+    section h1:first-of-type {.header;}
+}
+
+@media screen and (min-width: 769px) {
+    main {
+        display: block;
+
+        padding-top: 400px;
+    }
+    .pagehead {
+        display: block;
+        margin-top: 0;
+
+        h1, h2 {width: auto; text-align: initial;}
+        h1 {.poster;}
+        h2 {.header;}
+    }
+
+    .mainnav {
+
+        background: white;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            li {
+                padding: 1rem;
+            }
+        }
+
+        a {color: @orange;}
+    }
+
+    .deart {
+        width: 25%;
+        margin: 0 auto;
+    }
+}
+
