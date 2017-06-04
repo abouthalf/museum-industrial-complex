@@ -7,4 +7,19 @@
 <li>Eiusmod deserunt officia cupidatat nulla ad exercitation et id velit ea sit occaecat.</li>
 </ul>
 <a class="to-top" href="#main">▲ top</a></section><section id="contact"><h1>Contact</h1><p>Lorem qui ex esse sunt magna minim.</p>
-<a class="to-top" href="#main">▲ top</a></section></main></body></html>
+<a class="to-top" href="#main">▲ top</a></section></main><script>(function() {
+    if (!document.querySelector) {
+        return;
+    }
+    var nav = document.querySelector('nav.mainnav');
+    var body = document.querySelector('body');
+    var initial = nav.offsetTop;
+
+    window.addEventListener('scroll', function(e) {
+        if (body.scrollTop >= initial) {
+            nav.classList.add('fixed');
+        } else {
+            nav.classList.remove('fixed');
+        }
+    });
+})();</script></body></html>
