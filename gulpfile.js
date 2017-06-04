@@ -13,26 +13,26 @@ const cleanCss = new LessPluginCleanCSS({advanced: true}),
 	autoPreFix = new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
 gulp.task('clean', () => {
-	return gulp.src(['www/**/*.html','www/**/*.css'])
+	return gulp.src(['docs/**/*.html','docs/**/*.css'])
 		.pipe(clean());
 });
 
 gulp.task('css', () => {
 	return gulp.src('src/styles/*.less')
 		.pipe(less({plugins: [autoPreFix, cleanCss]}))
-		.pipe(gulp.dest('www/css'));;
+		.pipe(gulp.dest('docs/css'));;
 });
 
 gulp.task('html', () => {
 	return gulp.src('src/**/*.pug')
 		.pipe(pug())
-		.pipe(gulp.dest('www'));
+		.pipe(gulp.dest('docs'));
 });
 
 gulp.task('default', ['css', 'html'], () => {});
 
 gulp.task('server',['default'],function(){
-	gulp.src('www')
+	gulp.src('docs')
 		.pipe(server({
 			host: "0.0.0.0",
 			liveReload: true,
