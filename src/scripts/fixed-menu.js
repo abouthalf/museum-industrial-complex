@@ -5,12 +5,14 @@
     var nav = document.querySelector('nav.mainnav');
     var body = document.querySelector('body');
     var initial = nav.offsetTop;
+    var fixed = nav.cloneNode(true);
+    fixed.classList.add('fixed');
 
     window.addEventListener('scroll', function(e) {
         if (body.scrollTop >= initial) {
-            nav.classList.add('fixed');
+            nav.parentElement.insertBefore(fixed, nav);
         } else {
-            nav.classList.remove('fixed');
+            nav.parentElement.removeChild(fixed);
         }
     });
 })();
