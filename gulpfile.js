@@ -3,7 +3,8 @@
 const gulp = require('gulp'),
 	clean = require('gulp-clean'),
 	less = require('gulp-less'),
-	pug = require('gulp-pug');
+	pug = require('gulp-pug'),
+	server = require("gulp-webserver");
 
 const LessPluginAutoPrefix = require('less-plugin-autoprefix'),
 	LessPluginCleanCSS = require('less-plugin-clean-css');
@@ -12,7 +13,7 @@ const cleanCss = new LessPluginCleanCSS({advanced: true}),
 	autoPreFix = new LessPluginAutoPrefix({browsers: ["last 2 versions"]});
 
 gulp.task('clean', () => {
-	return gulp.src('www/*')
+	return gulp.src(['www/**/*.html','www/**/*.css'])
 		.pipe(clean());
 });
 
