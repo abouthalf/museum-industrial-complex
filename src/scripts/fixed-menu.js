@@ -5,7 +5,7 @@
     var body = document.querySelector('body');
 
     // don't do this on small screens
-    if (body.offsetWidth < 768) return;
+    if (body.offsetWidth < 769) return;
 
     var initial = nav.offsetTop;
     var fixed = nav.cloneNode(true);
