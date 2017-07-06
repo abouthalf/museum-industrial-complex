@@ -36,7 +36,6 @@ main {
     background-image: url('/img/header.svg');
     background-position: center top;
     background-repeat: no-repeat;
-    // background-size: contain;
 
     .mainnav {order: 0;}
     .pagehead {order: 1;}
@@ -114,8 +113,7 @@ section {
 
 @media screen and (min-width: 769px) {
     main {
-        display: block;
-
+        display: block; // undo flex layout
         padding-top: 400px;
     }
     .pagehead {
@@ -123,7 +121,7 @@ section {
         margin-top: 0;
 
         h1, h2 {width: auto; text-align: initial;}
-        h1 {.poster;}
+        h1 {.poster; font-size: 4.8rem;} // tiny adjustment to squeeze type onto one line
         h2 {.header;}
     }
 
@@ -148,9 +146,17 @@ section {
             top: 0;
             width: 1024px;
         }
+
     }
 
-    
+    // keep header below the nav bar when targeted
+    section:not(#contact):target {    
+        padding-top: 128px;
+    }
+
+    section > .copy {
+        max-width: 640px;
+    }
 
     .deart {
         width: 25%;
