@@ -1,5 +1,5 @@
 (function() {
-    if (!document.querySelector) {return;}
+    if (!document.querySelector) return;
 
     var nav = document.querySelector('nav.mainnav');
     var body = document.querySelector('body');

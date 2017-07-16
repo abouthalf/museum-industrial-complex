@@ -31,6 +31,17 @@ html(lang='en')
 				.copy
 					h1 Contact
 					p Please enter your zip code to be connected to a museum in your area.
+					form#contact-form
+						input#zip(type="text", name="zip", placeholder="Enter 5-digit, US ZIP code", pattern="[0-9]{5}")
+						button#submit(type="button", disabled) Go 
+						p.err Oh! Sorry. You weren’t supposed to see this.
+						p.err This is not for you.
+						p.err You should reconsider.
+						p.err No.
+						p.err Stop.
+						p.err Honey, no.
+						p.err This is really for other people. Not you.
 				a.to-top(href="#main") ▲ top
 		script
 			include scripts/fixed-menu.js
+			include scripts/honey-no.js

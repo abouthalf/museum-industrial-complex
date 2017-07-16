@@ -24,7 +24,6 @@ html, body {
 }
 
 // page components
-
 main {
     display: flex;
     flex-direction: column;    
@@ -87,6 +86,50 @@ section {
     text-decoration: none; 
     text-align: right;
     .muli;
+}
+
+#contact-form {
+
+    text-align: center;
+
+    padding: 2rem 0;
+
+    input[type="text"],
+    button {
+        .big;
+        .slabo;
+        color: #666;
+        background: white;
+        border: 1px solid #ccc;
+        padding: .25rem;
+    }
+
+    button:disabled {
+        color: #ccc;
+    }
+
+    button:active {
+        background: #ccc;
+    }
+
+    input[type="text"] {
+        border-right: 0;
+
+        &:invalid {
+            color: #C00;
+        }
+        &:valid {
+            color: #060;
+        }
+    }
+
+    .err {
+        .big;
+        font-weight: bold;
+        color: #600;
+        margin-top: 1rem;
+        display: none;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -161,6 +204,10 @@ section {
     .deart {
         width: 25%;
         margin: 0 auto;
+    }
+
+    #contact-form {
+        text-align: left;
     }
 }
 

@@ -16,8 +16,8 @@
 <p>Regardless of the current trends or political climate, any artwork covered by our services will be placed into the correct, moral, and historical light by our on-staff art historians.</p>
 <h3>Tax Incentives</h3>
 <p>Of course, all services provided by the Museum Industrial Complex are tax-deductible.</p>
-</div><a class="to-top" href="#main">▲ top</a></section><section id="contact"><div class="copy"><h1>Contact</h1><p>Please enter your zip code to be connected to a museum in your area.</p></div><a class="to-top" href="#main">▲ top</a></section></main><script>(function() {
-    if (!document.querySelector) {return;}
+</div><a class="to-top" href="#main">▲ top</a></section><section id="contact"><div class="copy"><h1>Contact</h1><p>Please enter your zip code to be connected to a museum in your area.</p><form id="contact-form"><input id="zip" type="text" name="zip" placeholder="Enter 5-digit, US ZIP code" pattern="[0-9]{5}"><button id="submit" type="button" disabled>Go </button><p class="err">Oh! Sorry. You weren’t supposed to see this.</p><p class="err">This is not for you.</p><p class="err">You should reconsider.</p><p class="err">No.</p><p class="err">Stop.</p><p class="err">Honey, no.</p><p class="err">This is really for other people. Not you.</p></form></div><a class="to-top" href="#main">▲ top</a></section></main><script>(function() {
+    if (!document.querySelector) return;
 
     var nav = document.querySelector('nav.mainnav');
     var body = document.querySelector('body');
@@ -35,5 +35,23 @@
         } else {
             nav.parentElement.removeChild(fixed);
         }
+    });
+})();(function(){
+    if (!document.querySelector) return;
+
+    var btn = document.getElementById('submit');
+    var zip = document.getElementById('zip');
+    var errs = document.querySelectorAll('#contact-form .err');
+
+    zip.addEventListener('input', function() {
+        btn.removeAttribute('disabled');
+    });
+
+    btn.addEventListener('click', function(){
+        Array.prototype.forEach.call(errs, function(e) {
+            e.style.display = "none";
+        });
+        var i = Math.floor(Math.random() * (errs.length));
+        errs[i].style.display = "block";
     });
 })();</script></body></html>
