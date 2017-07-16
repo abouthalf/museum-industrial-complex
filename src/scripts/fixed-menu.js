@@ -10,12 +10,14 @@
     var initial = nav.offsetTop;
     var fixed = nav.cloneNode(true);
     fixed.classList.add('fixed');
+    nav.parentElement.insertBefore(fixed, nav);
+    fixed.style.display = "none";
 
     window.addEventListener('scroll', function(e) {
         if (body.scrollTop >= initial) {
-            nav.parentElement.insertBefore(fixed, nav);
+            fixed.style.display = "block";
         } else {
-            nav.parentElement.removeChild(fixed);
+            fixed.style.display = "none";
         }
     });
 })();

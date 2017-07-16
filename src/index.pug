@@ -21,11 +21,13 @@ html(lang='en')
 				.copy
 					h1 About
 					include:markdown-it about.md
+				img.art(src="img/object2.svg", alt="art")
 				a.to-top(href="#main") ▲ top
 			section#services
 				.copy
 					h1 Services
 					include:markdown-it services.md
+				img.art(src="img/object3.svg", alt="art")
 				a.to-top(href="#main") ▲ top
 			section#contact
 				.copy
@@ -45,3 +47,4 @@ html(lang='en')
 		script
 			include scripts/fixed-menu.js
 			include scripts/honey-no.js
+			include scripts/fade-out.js
